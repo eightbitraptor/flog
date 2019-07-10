@@ -146,6 +146,8 @@ class Flog < MethodBasedSexpProcessor
     first_arg = args.first
     first_arg = first_arg[1] if first_arg[0] == :hash
 
+    return false unless first_arg
+
     [:lit, :str].include? first_arg[0] and first_arg[1]
   end
 
